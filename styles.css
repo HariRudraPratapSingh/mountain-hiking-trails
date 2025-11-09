@@ -1,0 +1,724 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #2c3e50;
+    background-color: #f8f9fa;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Hero Section with Premium Gradient */
+.hero {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7e8ba3 100%);
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><path d="M0,300 Q300,100 600,300 T1200,300 L1200,600 L0,600 Z" fill="rgba(255,255,255,0.05)"/></svg>') no-repeat bottom;
+    background-size: cover;
+}
+
+/* Navigation */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    position: relative;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 8px 16px;
+    border-radius: 5px;
+}
+
+.nav-links a:hover {
+    background-color: rgba(255,255,255,0.2);
+    transform: translateY(-2px);
+}
+
+/* Hero Content */
+.hero-content {
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    padding: 150px 20px;
+    color: #fff;
+}
+
+.hero-content h1 {
+    font-size: 64px;
+    margin-bottom: 20px;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.4);
+    animation: fadeInUp 1s ease;
+}
+
+.hero-content p {
+    font-size: 24px;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    animation: fadeInUp 1.2s ease;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 16px 40px;
+    background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 0 8px 20px rgba(243, 156, 18, 0.4);
+    transition: all 0.3s ease;
+    animation: fadeInUp 1.4s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(243, 156, 18, 0.6);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Guide Section */
+.guide-section {
+    padding: 80px 20px;
+    background: linear-gradient(180deg, #ecf0f1 0%, #ffffff 100%);
+}
+
+.guide-section h2 {
+    text-align: center;
+    font-size: 48px;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.section-intro {
+    text-align: center;
+    font-size: 20px;
+    color: #7f8c8d;
+    margin-bottom: 60px;
+}
+
+.guide-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.guide-card {
+    background: #fff;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    border-top: 4px solid #3498db;
+}
+
+.guide-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(52, 152, 219, 0.3);
+}
+
+.guide-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.guide-card h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.guide-card p {
+    color: #7f8c8d;
+    line-height: 1.8;
+}
+
+/* Trails Section */
+.trails-section {
+    padding: 80px 20px;
+    background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+.trails-section h2 {
+    text-align: center;
+    font-size: 48px;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.difficulty-category {
+    margin-bottom: 60px;
+}
+
+.category-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.easy .category-header {
+    background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+    color: #fff;
+}
+
+.medium .category-header {
+    background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+    color: #fff;
+}
+
+.difficult .category-header {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    color: #fff;
+}
+
+.category-header h3 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.category-header p {
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+.trail-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.trail-card {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.trail-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+.trail-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.trail-info {
+    padding: 25px;
+}
+
+.trail-info h4 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.trail-stats {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.trail-stats span {
+    background: #ecf0f1;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    color: #34495e;
+}
+
+.trail-info p {
+    color: #7f8c8d;
+    line-height: 1.7;
+}
+
+/* Equipment Section */
+.equipment-section {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+    color: #fff;
+}
+
+.equipment-section h2 {
+    text-align: center;
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.equipment-section .section-intro {
+    color: #bdc3c7;
+}
+
+.equipment-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.equipment-category {
+    background: rgba(255,255,255,0.1);
+    padding: 35px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.equipment-category h3 {
+    font-size: 28px;
+    margin-bottom: 25px;
+    color: #3498db;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+}
+
+.equipment-list {
+    list-style: none;
+}
+
+.equipment-list li {
+    margin-bottom: 20px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.equipment-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #2ecc71;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.equipment-list strong {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #ecf0f1;
+}
+
+.equipment-list p {
+    color: #bdc3c7;
+    line-height: 1.6;
+}
+
+/* Knowledge Section */
+.knowledge-section {
+    padding: 80px 20px;
+    background: linear-gradient(180deg, #f8f9fa 0%, #ecf0f1 100%);
+}
+
+.knowledge-section h2 {
+    text-align: center;
+    font-size: 48px;
+    margin-bottom: 60px;
+    color: #2c3e50;
+}
+
+.knowledge-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.knowledge-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    border-left: 5px solid #3498db;
+    transition: all 0.3s ease;
+}
+
+.knowledge-card:hover {
+    transform: translateX(10px);
+    box-shadow: 0 10px 30px rgba(52, 152, 219, 0.3);
+}
+
+.knowledge-card h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.knowledge-card p {
+    color: #7f8c8d;
+    line-height: 1.8;
+}
+
+/* Booking Section */
+.booking-section {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #8e44ad 0%, #9b59b6 50%, #c39bd3 100%);
+}
+
+.booking-section h2 {
+    text-align: center;
+    font-size: 48px;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.booking-section .section-intro {
+    color: #ecf0f1;
+}
+
+.booking-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.booking-card {
+    background: #fff;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.booking-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+
+.booking-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.booking-header h3 {
+    font-size: 26px;
+    color: #2c3e50;
+}
+
+.rating {
+    color: #f39c12;
+    font-weight: bold;
+}
+
+.booking-description {
+    color: #7f8c8d;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.booking-features {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+
+.booking-features span {
+    background: linear-gradient(135deg, #ecf0f1 0%, #bdc3c7 100%);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 13px;
+    color: #2c3e50;
+}
+
+.booking-button {
+    display: block;
+    text-align: center;
+    padding: 14px 30px;
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.booking-button:hover {
+    background: linear-gradient(135deg, #2980b9 0%, #1f6391 100%);
+    transform: scale(1.05);
+}
+
+/* Footer */
+.footer {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: #ecf0f1;
+    padding: 60px 20px 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-section h4 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #3498db;
+}
+
+.footer-section p {
+    line-height: 1.8;
+    color: #bdc3c7;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #bdc3c7;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #3498db;
+    padding-left: 5px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.social-links a {
+    color: #bdc3c7;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #3498db;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    color: #95a5a6;
+}
+
+/* Responsive Design with @media */
+
+/* Tablet Devices */
+@media (max-width: 1024px) {
+    .guide-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .trail-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .knowledge-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .booking-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .hero-content h1 {
+        font-size: 48px;
+    }
+    
+    .hero-content p {
+        font-size: 20px;
+    }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .navbar {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .hero-content {
+        padding: 100px 20px;
+    }
+    
+    .hero-content h1 {
+        font-size: 36px;
+    }
+    
+    .hero-content p {
+        font-size: 18px;
+    }
+    
+    .guide-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .trail-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .equipment-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .knowledge-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .booking-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .guide-section h2,
+    .trails-section h2,
+    .equipment-section h2,
+    .knowledge-section h2,
+    .booking-section h2 {
+        font-size: 36px;
+    }
+    
+    .category-header h3 {
+        font-size: 28px;
+    }
+    
+    .trail-stats {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 28px;
+    }
+    
+    .hero-content p {
+        font-size: 16px;
+    }
+    
+    .cta-button {
+        padding: 12px 30px;
+        font-size: 16px;
+    }
+    
+    .guide-section h2,
+    .trails-section h2,
+    .equipment-section h2,
+    .knowledge-section h2,
+    .booking-section h2 {
+        font-size: 28px;
+    }
+    
+    .section-intro {
+        font-size: 16px;
+    }
+    
+    .guide-card,
+    .equipment-category,
+    .knowledge-card,
+    .booking-card {
+        padding: 25px;
+    }
+    
+    .navbar {
+        padding: 15px 20px;
+    }
+    
+    .logo {
+        font-size: 24px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .navbar,
+    .cta-button,
+    .booking-button,
+    .footer {
+        display: none;
+    }
+    
+    .hero {
+        min-height: auto;
+        padding: 20px;
+    }
+    
+    body {
+        background: #fff;
+    }
+}
